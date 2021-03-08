@@ -8,11 +8,14 @@ namespace Torres_de_Hanoi
 {
     class Disco
     {
-        /*TODO: 
-        Decidir tipo de Valor
-        public int Valor { get; set; }
-        public String Valor { get; set; }
-        */
+        //PODEMOS ELEGIR SI INT O STRING 
+        //ESTE METODO ASIGNA LOS GET Y SET AUTOMATICAMENTE AL ATRIBUTO VALOR
+         public int Valor { get; set; }
+        public Disco(int valor)
+        {
+            Valor = valor;
+        }
 
+      
     }
 }

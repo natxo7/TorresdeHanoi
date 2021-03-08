@@ -8,35 +8,41 @@ namespace Torres_de_Hanoi
 {
     class Pila
     {
+        //PARA EL TAMANYO
         public int Size { get; set; }
-        /* TODO: Elegir tipo de Top
+        
         public int Top { get; set; }
-        public String Top { get; set; }        
-        */
-        /* TODO: Elegir tipo de Elementos
-        public Disco[] Elementos { get; set; }
-        public List<Disco> Elementos { get; set; }
-        */
-
-        /* TODO: Implementar métodos */
+       
+        /*ELEGIMOS TIPO LIST PORQUE NO HAY QUE DECIRLE EL TAMANYO*/
+        public List<Disco> elementos { get; set; }
+        /*CONSTRUCTOR*/
         public Pila()
         {
 
         }
+        /*METODOS A IMPLEMENTAR*/
+
 
         public void push(Disco d)
         {
-
+            elementos.Add(d);
         }
 
         public Disco pop()
         {
-            return null;
+            Disco variable;//variable tipo disco
+            variable = elementos[elementos.Count-1];//donde guardamos en la variable el ultimo elemento de la lista
+            elementos.RemoveAt(elementos.Count - 1);
+            return variable;
         }                
 
         public bool isEmpty()
         {
-            return true;
+            if (elementos.Count == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
     }
