@@ -27,14 +27,14 @@ namespace Torres_de_Hanoi
         /*METODOS A IMPLEMENTAR*/
 
 
-        public void push(Disco d)
+        public void push(Disco d)//para añadir un disco a la pila
         {
             elementos.Add(d);
             Size++;
             
         }
 
-        public Disco pop()
+        public Disco pop()//para quitar un disco
         {
             if (isEmpty() == true)
             {
@@ -53,7 +53,7 @@ namespace Torres_de_Hanoi
         }
         
 
-        public bool isEmpty()
+        public bool isEmpty()//si esta vacio 
         {
             if (Size == 0)
             {
@@ -61,6 +61,7 @@ namespace Torres_de_Hanoi
             }
             return false;
         }
+        //metodo que he utilizado para imprimir para poder ver donde hay un error
         public void impr()
         {
             if (Size == 0)

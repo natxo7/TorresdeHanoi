@@ -10,8 +10,8 @@ namespace Torres_de_Hanoi
     {
         //PODEMOS ELEGIR SI INT O STRING 
         //ESTE METODO ASIGNA LOS GET Y SET AUTOMATICAMENTE AL ATRIBUTO VALOR
-         public int Valor { get; set; }
-        public Disco(int valor)
+         public int Valor { get; set; }//getter y setter
+        public Disco(int valor)//constructor
         {
             Valor = valor;
         }

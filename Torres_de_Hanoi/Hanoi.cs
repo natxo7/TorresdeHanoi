@@ -8,33 +8,33 @@ namespace Torres_de_Hanoi
 {
     class Hanoi
     {
-        int movimientos = 0;
+        int movimientos = 0;//variable que se utiliza para saber los movimientos totales
         /*TODO: Implementar métodos*/
         public void mover_disco(Pila a, Pila b)
         {
-            if (a.isEmpty() == true)
+            if (a.isEmpty() == true)//si a esta vacio
             {
                 Disco enMovimiento = b.pop();
-                Console.WriteLine("mov si a es vacio");
+                Console.WriteLine("mov si a es vacio");//guardamos b enMovimiento
                 a.push(enMovimiento);
                
             }
-            else if (b.isEmpty() == true)
+            else if (b.isEmpty() == true)//si b esta vacio
             {
-                Disco enMovimiento = a.pop();
+                Disco enMovimiento = a.pop();//guardamos a enMovimiento
                 Console.WriteLine("mov si b es vacio");
                 b.push(enMovimiento);
                
             }
-            else if (a.elementos[a.elementos.Count-1].Valor > b.elementos[b.elementos.Count - 1].Valor)
+            else if (a.elementos[a.elementos.Count-1].Valor > b.elementos[b.elementos.Count - 1].Valor)//si el elemento a> b
             {
-                Disco enMovimiento = b.pop();
+                Disco enMovimiento = b.pop();//guardamos b enMovimiento
                 Console.WriteLine("mov si a > que b ");
                 a.push(enMovimiento);
             }
             else
             {
-                Disco enMovimiento = a.pop();
+                Disco enMovimiento = a.pop();//guardamos a enMovimiento
                 Console.WriteLine("mov si a < que b ");
                 b.push(enMovimiento);
             }
@@ -70,7 +70,7 @@ namespace Torres_de_Hanoi
                     }
                     if (fin.Size == n)
                     {
-                        seguirBucle = false;
+                        seguirBucle = false;//para para el while ya que seguir bucle es bool
                        
                     }
                 }
@@ -104,7 +104,7 @@ namespace Torres_de_Hanoi
                     }
                 }
             }
-            return movimientos;
+            return movimientos;//devolcemos los movimientos
         }
     }
    
