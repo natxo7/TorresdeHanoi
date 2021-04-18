@@ -106,6 +106,23 @@ namespace Torres_de_Hanoi
             }
             return movimientos;//devolcemos los movimientos
         }
+
+        public int recursivo(int n, Pila ini, Pila fin, Pila aux) 
+        {
+            if (n == 1) 
+            {
+                mover_disco(ini, fin); 
+                movimientos = movimientos + 1;
+            }
+            else // Si no
+            {
+                recursivo(n - 1, ini, aux, fin);
+                mover_disco(ini, fin);
+                movimientos = movimientos + 1;
+                recursivo(n - 1, aux, fin, ini);
+            }
+            return movimientos; 
+        }
     }
    
 }
