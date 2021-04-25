@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Torres_de_Hanoi
 {
@@ -55,42 +59,48 @@ namespace Torres_de_Hanoi
             Console.WriteLine("¿Qué algoritmo prefieres utilizar? Pulsa 1 para usar el iterativo o 2 para usar el recursivo?");
             int algoritmoUtilizado = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("¿Cuántos discos quieres insertar?");
-            int numDiscos = Convert.ToInt32(Console.ReadLine());
-            Disco[] discoFinales = new Disco[numDiscos];
+            int numDiscos =Int32.Parse(Console.ReadLine());
+            List<Disco> discoFinales = new List<Disco>();
             if (numDiscos == 0)
             {
                 Console.WriteLine("¿Realmente quisiste escribir 0? Con el numero 0 es imposible de realizar.");
+                Console.ReadKey();
             }
             if (numDiscos < 0)
             {
                 Console.WriteLine("¿Realmente quisiste escribir un número negativo? Si ya es imposible repartir algo inexistente, imagínate algo negativo, vuelva a intentarlo.");
+                Console.ReadKey();
             }
             if (numDiscos > 0)
             {
-                Console.WriteLine("aaaaaaaaaaaaaaaaaaa");
-                for (int i = 0; i < numDiscos; i++)
-                {
-                    discoFinales[i] = new Disco(i);
-                    Console.WriteLine(discoFinales);
-                }
                 Pila ini = new Pila();
                 Pila aux = new Pila();
                 Pila fin = new Pila();
-                for (int i = discoFinales.Length; i > 0; i--)
+
+                for (int i = numDiscos; i > 0; i--)
                 {
-                    ini.push(discoFinales[i - 1]);
+                   
+                    //discoFinales.Add(new Disco(i));
+                    ini.push(new Disco(i));
+
+                   
+                   
                 }
+           
                 Hanoi torres_hanoi = new Hanoi();
-                if (algoritmoUtilizado == 1) // Si la respuesta del usuario al principio es uno
+                if (algoritmoUtilizado == 1) // si penemos un 1 en pantalla
                 {
-                    int sol = torres_hanoi.iterativo(numDiscos, ini, fin, aux); // Llamamos al metodo iterativo
-                    Console.WriteLine(sol); // Muestra por pantalla 
+                    
+                    int sol = torres_hanoi.iterativo(numDiscos, ini, fin, aux); // Llamamos  iterativo
+                    Console.WriteLine(sol); // mostramos la sol 
                 }
                 if (algoritmoUtilizado == 2) // Si la respuesta del usuario al principio es dos
                 {
-                    int sol = torres_hanoi.recursivo(numDiscos, ini, fin, aux); // Llamamos al metodo recursivo
-                    Console.WriteLine(sol); // Muestra por pantalla 
+                    
+                    int sol = torres_hanoi.recursivo(numDiscos, ini, fin, aux); // Llamamos recursivo
+                    Console.WriteLine(sol); //  mostramos la sol 
                 }
+                Console.ReadKey();
             }
         }
     }

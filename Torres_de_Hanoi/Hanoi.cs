@@ -106,11 +106,12 @@ namespace Torres_de_Hanoi
             }
             return movimientos;//devolcemos los movimientos
         }
-
+        //codigo recursivo ya listo
         public int recursivo(int n, Pila ini, Pila fin, Pila aux) 
         {
-            if (n == 1) 
+            if (n == 1) //condicion
             {
+
                 mover_disco(ini, fin); 
                 movimientos = movimientos + 1;
             }
@@ -121,7 +122,7 @@ namespace Torres_de_Hanoi
                 movimientos = movimientos + 1;
                 recursivo(n - 1, aux, fin, ini);
             }
-            return movimientos; 
+            return movimientos; //devolvemos los moviminetos
         }
     }
    
