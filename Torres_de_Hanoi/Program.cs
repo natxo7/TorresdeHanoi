@@ -68,7 +68,7 @@ namespace Torres_de_Hanoi
             }
             if (numDiscos < 0)
             {
-                Console.WriteLine("¿Realmente quisiste escribir un número negativo? Si ya es imposible repartir algo inexistente, imagínate algo negativo, vuelva a intentarlo.");
+                Console.WriteLine("¿Realmente quisiste escribir un número negativo? con un numero negativo no se puede, vuelva a intentarlo.");
                 Console.ReadKey();
             }
             if (numDiscos > 0)
@@ -81,10 +81,7 @@ namespace Torres_de_Hanoi
                 {
                    
                     //discoFinales.Add(new Disco(i));
-                    ini.push(new Disco(i));
-
-                   
-                   
+                    ini.push(new Disco(i));  
                 }
            
                 Hanoi torres_hanoi = new Hanoi();
@@ -99,6 +96,11 @@ namespace Torres_de_Hanoi
                     
                     int sol = torres_hanoi.recursivo(numDiscos, ini, fin, aux); // Llamamos recursivo
                     Console.WriteLine(sol); //  mostramos la sol 
+                }
+                if(algoritmoUtilizado>2)
+                {
+
+                    Console.WriteLine("No has introduciddo el numero correcto en el algoritmo");
                 }
                 Console.ReadKey();
             }
